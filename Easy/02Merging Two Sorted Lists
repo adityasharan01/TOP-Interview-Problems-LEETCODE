@@ -1,0 +1,86 @@
+Given two lists of integers a and b sorted in ascending order, merge them into one large sorted list.
+
+Constraints
+
+0 ≤ n ≤ 200,000 where n is the length of a
+0 ≤ m ≤ 200,000 where m is the length of b
+Example 1
+Input
+a = [5, 10, 15]
+b = [3, 8, 9]
+Output
+[3, 5, 8, 9, 10, 15]
+
+Intuition
+Simple Solution Covered in one Loop_________________________________
+
+Implementation
+Time Complexity
+\mathcal{O}(n+m)O(n+m)_________________________________
+
+Space Complexity
+\mathcal{O}(n+m)O(n+m)_________________________________
+
+import java.util.*;
+
+class Solution {
+    public int[] solve(int[] l1, int[] l2) {
+        int n = l1.length, m = l2.length, i = 0, j = 0, k = 0;
+        int res[] = new int[n + m];
+        while (i < n || j < m) {
+            if (i >= n) {
+                res[k] = l2[j];
+                j++;
+            } else if (j >= m) {
+                res[k] = l1[i];
+                i++;
+            } else if (l1[i] < l2[j]) {
+                res[k] = l1[i];
+                i++;
+            } else {
+                res[k] = l2[j];
+                j++;
+            }
+            k++;
+        }
+        return res;
+    }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Intuition
+Simplest and Fastest Java Solutions
+Runs in \mathcal{O}(n + m)O(n+m) time and space complexity
+
+import java.util.*;
+
+class Solution {
+    public int[] solve(int[] lst0, int[] lst1) {
+        int[] arr = new int[lst0.length + lst1.length];
+        int i = 0, j = 0;
+
+        while (i < lst0.length && j < lst1.length) {
+            if (lst0[i] < lst1[j]) {
+                arr[i + j] = lst0[i];
+                i++;
+            } else {
+                arr[i + j] = lst1[j];
+                j++;
+            }
+        }
+
+        while (i < lst0.length) {
+            arr[i + j] = lst0[i];
+            i++;
+        }
+
+        while (j < lst1.length) {
+            arr[i + j] = lst1[j];
+            j++;
+        }
+
+        return arr;
+    }
+}
