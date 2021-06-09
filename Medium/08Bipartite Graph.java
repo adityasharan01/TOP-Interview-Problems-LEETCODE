@@ -54,6 +54,45 @@ Hint2:check the condition to be a bipartite
 Hint3:if the graph is bipartite then its adjacent nodes cant have same color
 
 Intuition
+Divide graph nodes into two group let's say group id's are 1 and -1, if any node X has neighbors a,b and c then X can belongs to group 1 and it's neighbors will go in -1 group, in the same way a,b and c neghbors will go in 1 group , if at any time any node and it's neghbors group id is same it means it is a conflicts and we can not devide graph nodes in two part.
+
+Implementation
+Time Complexity
+\mathcal{O}(V+E)O(V+E)
+
+Space Complexity
+\mathcal{O}(V)O(V) to store the group id's
+
+import java.util.*;
+
+class Solution {
+    public boolean solve(int[][] arr) {
+        int n = arr.length;
+
+        int[] color = new int[n];
+        for (int i = 0; i < n; i++) {
+            if (color[i] == 0 && !dfs(i, arr, color, 1))
+                return false;
+        }
+        return true;
+    }
+    boolean dfs(int start, int[][] graph, int[] color, int c) {
+        color[start] = c;
+
+        for (int i = 0; i < graph[start].length; i++) {
+            int point = graph[start][i];
+
+            if (color[point] == 0 && !dfs(point, graph, color, -c))
+                return false;
+
+            else if (color[point] == c)
+                return false;
+        }
+        return true;
+    }
+}
+//////////////////////////////////////////////////////////////////////////////////////////////
+Intuition
 The idea is to use a graph colouring or use two distinct sets while doing DFS
 
 Implementation
