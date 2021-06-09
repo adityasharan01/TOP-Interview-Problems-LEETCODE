@@ -15,6 +15,17 @@ One possible sequence of moves is (0, 0) → (2, 1) → (0, 2) → (1, 0)
   Hint1:
 use offset array instead of set.
   
+  
+  Link:https://www.techiedelight.com/chess-knight-problem-find-shortest-path-source-destination/
+  
+  
+  
+  
+  
+  
+  
+  
+  //////////////////////////////////////////////////////////////////////
   Intuition
 we can solve it using dynamic programming
 we can start at the position r, c and see the smallest number of moves to reach 0, 0
