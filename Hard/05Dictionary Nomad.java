@@ -1,4 +1,5 @@
-You are given a list of strings dictionary and two strings start and end. You want to reach from start to end by modifying one character at a time and making sure each resulting word is also in the dictionary. Words are case-sensitive.
+You are given a list of strings dictionary and two strings start and end. You want to reach from start to end by
+modifying one character at a time and making sure each resulting word is also in the dictionary. Words are case-sensitive.
 
 Return the minimum number of steps it would take to reach end. Return -1 if it's not possible.
 
