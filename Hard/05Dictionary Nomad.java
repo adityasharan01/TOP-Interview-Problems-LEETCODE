@@ -30,7 +30,8 @@ There's no way to change 1 character to reach "day".
   Hint2:Simple Bfs
   
   Intuition
-We are given a problem with an initial state and a state of next possible states, asking for the minimum length. This is simply asking for shortest distance between two vertex in an undirected graph.
+We are given a problem with an initial state and a state of next possible states, asking for the minimum length.
+ This is simply asking for shortest distance between two vertex in an undirected graph.
 Hence, BFS
 
 Implementation
