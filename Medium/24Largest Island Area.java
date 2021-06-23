@@ -1,4 +1,6 @@
-You are given a two-dimensional integer matrix of 1s and 0s. A 1 represents land and 0 represents water, so an island is a group of 1s that are neighboring whose perimeter is surrounded by water. You can assume that the edges of the matrix are surrounded by water.
+You are given a two-dimensional integer matrix of 1s and 0s. A 1 represents land and 0 represents water,
+so an island is a group of 1s that are neighboring whose perimeter is surrounded by water.
+    You can assume that the edges of the matrix are surrounded by water.
 
 Return the area of the largest island in matrix.
 
@@ -26,13 +28,15 @@ Intuition
 
 We simply perform a DFS on the matrix to find the islands and keep a counter of the area of every island we find. We then return the largest one.
 
-To find the area of an island, we explore every square connected to the current one 4-directionally and then add up the number of squares explored that are part of the current island. The total will be the area of the current island.
+To find the area of an island, we explore every square connected to the current one 4-directionally 
+and then add up the number of squares explored that are part of the current island. The total will be the area of the current island.
 
 To make sure that we don't count a square twice later in the exploration process, we simply change the current square to 0.
 
 Complexities
 
-Time complexity: \mathcal{O}(R * C)O(R∗C), where \mathcal{R}R is the number of rows in the matrix, and \mathcal{C}C is the number of columns in the matrix. We don't visit any square more than once.
+Time complexity: \mathcal{O}(R * C)O(R∗C), where \mathcal{R}R is the number of rows in the matrix,
+and \mathcal{C}C is the number of columns in the matrix. We don't visit any square more than once.
 Space complexity: \mathcal{O}(R * C)O(R∗C), which is the space used in the recursion stack.
 
 import java.util.*;
