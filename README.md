@@ -1,6 +1,6 @@
 # TOP-Interview-Problems-LEETCODE
 
-<h1 align="center">Hi there 👋, I'm Victor Ikechukwu</h1>
+<h1 align="center">Hi there 👋, I'm Aditya SHaran</h1>
 
 <h2>About Me</h2>
 
